@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/amr.gaballah/Documents/Tweety/Tweety/conf/routes
-// @DATE:Tue Mar 02 10:17:16 EET 2021
+// @DATE:Tue Mar 02 10:30:25 EET 2021
 
 import play.api.mvc.Call
 
@@ -18,10 +18,16 @@ package controllers {
     }
 
   
-    // @LINE:1
-    def index(): Call = {
+    // @LINE:2
+    def list(): Call = {
       
-      Call("GET", _prefix)
+      Call("GET", _prefix + { _defaultPrefix } + "list")
+    }
+  
+    // @LINE:1
+    def index(index:String): Call = {
+      
+      Call("GET", _prefix + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("index", index)))))
     }
   
   }

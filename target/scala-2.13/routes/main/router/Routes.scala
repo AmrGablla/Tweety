@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/amr.gaballah/Documents/Tweety/Tweety/conf/routes
-// @DATE:Tue Mar 02 10:17:16 EET 2021
+// @DATE:Tue Mar 02 10:30:25 EET 2021
 
 package router
 
@@ -36,7 +36,8 @@ class Routes(
   }
 
   def documentation = List(
-    ("""GET""", this.prefix, """controllers.HomeController.index"""),
+    ("""GET""", this.prefix, """controllers.HomeController.index(index:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """list""", """controllers.HomeController.list"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -49,14 +50,32 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix)))
   )
   private[this] lazy val controllers_HomeController_index0_invoker = createInvoker(
-    HomeController_0.index,
+    HomeController_0.index(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
       "index",
-      Nil,
+      Seq(classOf[String]),
       "GET",
       this.prefix + """""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:2
+  private[this] lazy val controllers_HomeController_list1_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("list")))
+  )
+  private[this] lazy val controllers_HomeController_list1_invoker = createInvoker(
+    HomeController_0.list,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "list",
+      Nil,
+      "GET",
+      this.prefix + """list""",
       """""",
       Seq()
     )
@@ -67,8 +86,14 @@ class Routes(
   
     // @LINE:1
     case controllers_HomeController_index0_route(params@_) =>
+      call(params.fromQuery[String]("index", None)) { (index) =>
+        controllers_HomeController_index0_invoker.call(HomeController_0.index(index))
+      }
+  
+    // @LINE:2
+    case controllers_HomeController_list1_route(params@_) =>
       call { 
-        controllers_HomeController_index0_invoker.call(HomeController_0.index)
+        controllers_HomeController_list1_invoker.call(HomeController_0.list)
       }
   }
 }
