@@ -1,5 +1,6 @@
 # Tweety
-Rology hiring task.
+Rology hiring task. based on:  play-java-rest-api-example
+
 # play-java-rest-api-example
 
 A REST API showing Play with a JPA backend.  For the Scala version, please see <https://github.com/playframework/play-samples/tree/2.8.x/play-scala-rest-api-example>.
