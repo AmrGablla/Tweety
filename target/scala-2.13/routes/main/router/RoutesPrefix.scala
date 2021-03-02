@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/amr.gaballah/Documents/Tweety/Tweety/conf/routes
-// @DATE:Tue Mar 02 10:30:25 EET 2021
+// @DATE:Tue Mar 02 12:49:18 EET 2021
 
 
 package router {

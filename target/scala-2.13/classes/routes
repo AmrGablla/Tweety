@@ -1,2 +1,2 @@
-GET     /                           controllers.HomeController.index(index: String)
-GET    /list                           controllers.HomeController.list
+GET     /                           controllers.HomeController.index
+POST    /save                        controllers.HomeController.save(request: Request)

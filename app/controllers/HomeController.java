@@ -16,22 +16,17 @@ import v1.post.PostData;
 public class HomeController extends Controller {
 
     @Inject
-    private TweetRepository user;
+    private TweetRepository tweetRepository;
 
-    public Result index(String id) {
-        PostData u = user.findById(id);
-        JsonNode jsonObject = Json.toJson(u);
-        return created(Util.createResponse(jsonObject, true));
-    }
-
-    public Result save(PostData _user) {
-        user.save(_user);
-        return ok();
-    }
-
-    public Result list() {  
-        var data = user.getDatabase();
+    public Result index() {
+        var data = tweetRepository.getDatabase();
         JsonNode jsonObject = Json.toJson(data);
         return ok(Util.createResponse(jsonObject, true));
     }
+
+    public Result save(Http.Request request) {
+        JsonNode json = request.body().asJson();
+        tweetRepository.save(Json.fromJson(json, PostData.class));
+        return ok();
+    } 
 }

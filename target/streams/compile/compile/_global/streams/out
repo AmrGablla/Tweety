@@ -1,3 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\amr.gaballah\Documents\Tweety\Tweety\app\controllers\HomeController.java:23:1: incompatible types: org.bson.types.ObjectId cannot be converted to java.lang.String[0m
-[0m[[0m[31merror[0m] [0m[0mid[0m
-[0m[[0m[0minfo[0m] [0m[0mSome messages have been simplified; recompile with -Xdiags:verbose to get full output[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\amr.gaballah\Documents\Tweety\Tweety\app\controllers\HomeController.java:29:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   class Student[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class controllers.HomeController[0m
+[0m[[0m[31merror[0m] [0m[0mStudent[0m
