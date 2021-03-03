@@ -7,4 +7,5 @@ The project is based on play framework https://www.playframework.com/
 # pre 
 
 # Run the code
-to run the code just use:  $ sbt run
+to run the code just use:  
+$ sbt run
