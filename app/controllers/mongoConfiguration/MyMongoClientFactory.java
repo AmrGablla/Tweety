@@ -18,7 +18,7 @@ public class MyMongoClientFactory extends MongoClientFactory {
 
     public MongoClient createClient() throws Exception {
         return new MongoClient(Arrays.asList(new
-        ServerAddress("mongodb+srv://tweetyUser:P@$$w0rd@cluster0.ogpl4.mongodb.net/tweety?retryWrites=true&w=majority")));
+        ServerAddress("mongodb+srv://tweetyUser:asd123ewq@cluster0.ogpl4.mongodb.net/tweety?retryWrites=true&w=majority")));
     }
 
     public String getDBName() {

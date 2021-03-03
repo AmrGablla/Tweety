@@ -1,13 +1,13 @@
-2021-03-02 12:50:04,830 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-12 - Database [default] initialized
-2021-03-02 12:50:04,836 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-12 - Creating Pool for datasource 'default'
-2021-03-02 12:50:04,896 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-12 - datasource [default] bound to JNDI as DefaultDS
-2021-03-02 12:50:04,917 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-6 - Slf4jLogger started
-2021-03-02 12:50:06,042 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-12 - Application started (Dev) (no global state)
-2021-03-02 12:50:36,146 [ERROR] from play.api.http.DefaultHttpErrorHandler in application-akka.actor.default-dispatcher-6 - 
+2021-03-02 13:53:22,043 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-5 - Database [default] initialized
+2021-03-02 13:53:22,049 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
+2021-03-02 13:53:22,134 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-5 - datasource [default] bound to JNDI as DefaultDS
+2021-03-02 13:53:22,161 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-6 - Slf4jLogger started
+2021-03-02 13:53:23,718 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-5 - Application started (Dev) (no global state)
+2021-03-02 13:53:53,927 [ERROR] from play.api.http.DefaultHttpErrorHandler in application-akka.actor.default-dispatcher-6 - 
 
-! @7j0o725ej - Internal server error, for (GET) [/] ->
+! @7j0ofa7f3 - Internal server error, for (GET) [/] ->
  
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[MongoTimeoutException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN, servers=[{address=mongodb+srv://tweetyuser:p@$$w0rd@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: A non-recoverable error occurred during a database lookup (mongodb+srv://tweetyuser:p@$$w0rd@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority)}, caused by {java.net.UnknownHostException: A non-recoverable error occurred during a database lookup (mongodb+srv://tweetyuser:p@$$w0rd@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority)}}]]]
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[MongoTimeoutException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN, servers=[{address=mongodb+srv://tweetyuser:asd123ewq@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongodb+srv://tweetyuser:asd123ewq@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority}, caused by {java.net.UnknownHostException: mongodb+srv://tweetyuser:asd123ewq@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority}}]]]
 	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:335)
 	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:253)
 	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:424)
@@ -25,7 +25,7 @@ play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[MongoTime
 	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
 	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
-Caused by: com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN, servers=[{address=mongodb+srv://tweetyuser:p@$$w0rd@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: A non-recoverable error occurred during a database lookup (mongodb+srv://tweetyuser:p@$$w0rd@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority)}, caused by {java.net.UnknownHostException: A non-recoverable error occurred during a database lookup (mongodb+srv://tweetyuser:p@$$w0rd@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority)}}]
+Caused by: com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN, servers=[{address=mongodb+srv://tweetyuser:asd123ewq@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongodb+srv://tweetyuser:asd123ewq@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority}, caused by {java.net.UnknownHostException: mongodb+srv://tweetyuser:asd123ewq@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority}}]
 	at com.mongodb.internal.connection.BaseCluster.getDescription(BaseCluster.java:182)
 	at com.mongodb.internal.connection.AbstractMultiServerCluster.getDescription(AbstractMultiServerCluster.java:54)
 	at com.mongodb.client.internal.MongoClientDelegate.getConnectedClusterDescription(MongoClientDelegate.java:152)
@@ -67,7 +67,207 @@ Caused by: com.mongodb.MongoTimeoutException: Timed out after 30000 ms while wai
 	at akka.http.scaladsl.util.FastFuture$.$anonfun$transformWith$3(FastFuture.scala:51)
 	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:447)
 	... 12 common frames omitted
-2021-03-02 12:53:26,316 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-shutdown-hook-1 - Stopping Akka HTTP server...
-2021-03-02 12:53:26,325 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-akka.actor.internal-dispatcher-4 - Terminating server binding for /[0:0:0:0:0:0:0:0]:9000
-2021-03-02 12:53:26,340 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-4 - Shutting down connection pool.
-2021-03-02 12:53:26,390 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-akka.actor.internal-dispatcher-17 - Running provided shutdown stop hooks
+2021-03-02 13:54:22,045 [ERROR] from play.api.http.DefaultHttpErrorHandler in application-akka.actor.default-dispatcher-7 - 
+
+! @7j0ofbn4i - Internal server error, for (GET) [/] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[MongoTimeoutException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN, servers=[{address=mongodb+srv://tweetyuser:asd123ewq@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongodb+srv://tweetyuser:asd123ewq@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority}, caused by {java.net.UnknownHostException: mongodb+srv://tweetyuser:asd123ewq@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority}}]]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:335)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:253)
+	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:424)
+	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:420)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:453)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:94)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:47)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:47)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+Caused by: com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN, servers=[{address=mongodb+srv://tweetyuser:asd123ewq@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongodb+srv://tweetyuser:asd123ewq@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority}, caused by {java.net.UnknownHostException: mongodb+srv://tweetyuser:asd123ewq@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority}}]
+	at com.mongodb.internal.connection.BaseCluster.getDescription(BaseCluster.java:182)
+	at com.mongodb.internal.connection.AbstractMultiServerCluster.getDescription(AbstractMultiServerCluster.java:54)
+	at com.mongodb.client.internal.MongoClientDelegate.getConnectedClusterDescription(MongoClientDelegate.java:152)
+	at com.mongodb.client.internal.MongoClientDelegate.createClientSession(MongoClientDelegate.java:103)
+	at com.mongodb.client.internal.MongoClientDelegate$DelegateOperationExecutor.getClientSession(MongoClientDelegate.java:284)
+	at com.mongodb.client.internal.MongoClientDelegate$DelegateOperationExecutor.execute(MongoClientDelegate.java:188)
+	at com.mongodb.client.internal.MongoClientDelegate$DelegateOperationExecutor.execute(MongoClientDelegate.java:177)
+	at com.mongodb.DBCursor.initializeCursor(DBCursor.java:989)
+	at com.mongodb.DBCursor.hasNext(DBCursor.java:172)
+	at dev.morphia.query.internal.MorphiaCursor.toList(MorphiaCursor.java:56)
+	at repositories.TweetRepository.getDatabase(TweetRepository.java:28)
+	at controllers.HomeController.index(HomeController.java:22)
+	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$2(Routes.scala:92)
+	at play.core.routing.HandlerInvokerFactory$$anon$6.resultCall(HandlerInvoker.scala:140)
+	at play.core.routing.HandlerInvokerFactory$$anon$6.resultCall(HandlerInvoker.scala:139)
+	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$3$$anon$4$$anon$5.invocation(HandlerInvoker.scala:113)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:119)
+	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:33)
+	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:175)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:661)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:430)
+	at play.core.j.HttpExecutionContext.$anonfun$execute$1(HttpExecutionContext.scala:64)
+	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:59)
+	at scala.concurrent.impl.Promise$Transformation.submitWithValue(Promise.scala:392)
+	at scala.concurrent.impl.Promise$DefaultPromise.submitWithValue(Promise.scala:302)
+	at scala.concurrent.impl.Promise$DefaultPromise.dispatchOrAddCallbacks(Promise.scala:276)
+	at scala.concurrent.impl.Promise$DefaultPromise.map(Promise.scala:146)
+	at scala.concurrent.Future$.apply(Future.scala:661)
+	at play.core.j.JavaAction.apply(JavaAction.scala:176)
+	at play.api.mvc.Action.$anonfun$apply$4(Action.scala:82)
+	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$4(Accumulator.scala:168)
+	at scala.util.Try$.apply(Try.scala:210)
+	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$3(Accumulator.scala:168)
+	at scala.Function1.$anonfun$andThen$1(Function1.scala:85)
+	at play.api.libs.streams.StrictAccumulator.run(Accumulator.scala:199)
+	at play.core.server.AkkaHttpServer.$anonfun$runAction$4(AkkaHttpServer.scala:415)
+	at akka.http.scaladsl.util.FastFuture$.strictTransform$1(FastFuture.scala:41)
+	at akka.http.scaladsl.util.FastFuture$.$anonfun$transformWith$3(FastFuture.scala:51)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:447)
+	... 12 common frames omitted
+2021-03-02 14:42:13,221 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-4 - Shutting down connection pool.
+2021-03-02 14:42:14,159 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-15 - Database [default] initialized
+2021-03-02 14:42:14,160 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-15 - Creating Pool for datasource 'default'
+2021-03-02 14:42:14,164 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-15 - datasource [default] bound to JNDI as DefaultDS
+2021-03-02 14:42:14,185 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-6 - Slf4jLogger started
+2021-03-02 14:42:14,696 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-15 - Application started (Dev) (no global state)
+2021-03-02 14:42:44,707 [ERROR] from play.api.http.DefaultHttpErrorHandler in application-akka.actor.default-dispatcher-6 - 
+
+! @7j0oll11d - Internal server error, for (GET) [/] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[MongoTimeoutException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN, servers=[{address=mongodb://tweetyuser:asd123ewq@cluster0-shard-00-00.ogpl4.mongodb.net:27017,cluster0-shard-00-01.ogpl4.mongodb.net:27017,cluster0-shard-00-02.ogpl4.mongodb.net:27017/tweety?ssl=true&replicaset=atlas-9c6lal-shard-0&authsource=admin&retrywrites=true&w=majority:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: A non-recoverable error occurred during a database lookup (mongodb://tweetyuser:asd123ewq@cluster0-shard-00-00.ogpl4.mongodb.net:27017,cluster0-shard-00-01.ogpl4.mongodb.net:27017,cluster0-shard-00-02.ogpl4.mongodb.net:27017/tweety?ssl=true&replicaset=atlas-9c6lal-shard-0&authsource=admin&retrywrites=true&w=majority)}, caused by {java.net.UnknownHostException: A non-recoverable error occurred during a database lookup (mongodb://tweetyuser:asd123ewq@cluster0-shard-00-00.ogpl4.mongodb.net:27017,cluster0-shard-00-01.ogpl4.mongodb.net:27017,cluster0-shard-00-02.ogpl4.mongodb.net:27017/tweety?ssl=true&replicaset=atlas-9c6lal-shard-0&authsource=admin&retrywrites=true&w=majority)}}]]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:335)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:253)
+	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:424)
+	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:420)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:453)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:94)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:47)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:47)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+Caused by: com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN, servers=[{address=mongodb://tweetyuser:asd123ewq@cluster0-shard-00-00.ogpl4.mongodb.net:27017,cluster0-shard-00-01.ogpl4.mongodb.net:27017,cluster0-shard-00-02.ogpl4.mongodb.net:27017/tweety?ssl=true&replicaset=atlas-9c6lal-shard-0&authsource=admin&retrywrites=true&w=majority:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: A non-recoverable error occurred during a database lookup (mongodb://tweetyuser:asd123ewq@cluster0-shard-00-00.ogpl4.mongodb.net:27017,cluster0-shard-00-01.ogpl4.mongodb.net:27017,cluster0-shard-00-02.ogpl4.mongodb.net:27017/tweety?ssl=true&replicaset=atlas-9c6lal-shard-0&authsource=admin&retrywrites=true&w=majority)}, caused by {java.net.UnknownHostException: A non-recoverable error occurred during a database lookup (mongodb://tweetyuser:asd123ewq@cluster0-shard-00-00.ogpl4.mongodb.net:27017,cluster0-shard-00-01.ogpl4.mongodb.net:27017,cluster0-shard-00-02.ogpl4.mongodb.net:27017/tweety?ssl=true&replicaset=atlas-9c6lal-shard-0&authsource=admin&retrywrites=true&w=majority)}}]
+	at com.mongodb.internal.connection.BaseCluster.getDescription(BaseCluster.java:182)
+	at com.mongodb.internal.connection.AbstractMultiServerCluster.getDescription(AbstractMultiServerCluster.java:54)
+	at com.mongodb.client.internal.MongoClientDelegate.getConnectedClusterDescription(MongoClientDelegate.java:152)
+	at com.mongodb.client.internal.MongoClientDelegate.createClientSession(MongoClientDelegate.java:103)
+	at com.mongodb.client.internal.MongoClientDelegate$DelegateOperationExecutor.getClientSession(MongoClientDelegate.java:284)
+	at com.mongodb.client.internal.MongoClientDelegate$DelegateOperationExecutor.execute(MongoClientDelegate.java:188)
+	at com.mongodb.client.internal.MongoClientDelegate$DelegateOperationExecutor.execute(MongoClientDelegate.java:177)
+	at com.mongodb.DBCursor.initializeCursor(DBCursor.java:989)
+	at com.mongodb.DBCursor.hasNext(DBCursor.java:172)
+	at dev.morphia.query.internal.MorphiaCursor.toList(MorphiaCursor.java:56)
+	at repositories.TweetRepository.getDatabase(TweetRepository.java:28)
+	at controllers.HomeController.index(HomeController.java:22)
+	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$2(Routes.scala:92)
+	at play.core.routing.HandlerInvokerFactory$$anon$6.resultCall(HandlerInvoker.scala:140)
+	at play.core.routing.HandlerInvokerFactory$$anon$6.resultCall(HandlerInvoker.scala:139)
+	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$3$$anon$4$$anon$5.invocation(HandlerInvoker.scala:113)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:119)
+	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:33)
+	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:175)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:661)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:430)
+	at play.core.j.HttpExecutionContext.$anonfun$execute$1(HttpExecutionContext.scala:64)
+	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:59)
+	at scala.concurrent.impl.Promise$Transformation.submitWithValue(Promise.scala:392)
+	at scala.concurrent.impl.Promise$DefaultPromise.submitWithValue(Promise.scala:302)
+	at scala.concurrent.impl.Promise$DefaultPromise.dispatchOrAddCallbacks(Promise.scala:276)
+	at scala.concurrent.impl.Promise$DefaultPromise.map(Promise.scala:146)
+	at scala.concurrent.Future$.apply(Future.scala:661)
+	at play.core.j.JavaAction.apply(JavaAction.scala:176)
+	at play.api.mvc.Action.$anonfun$apply$4(Action.scala:82)
+	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$4(Accumulator.scala:168)
+	at scala.util.Try$.apply(Try.scala:210)
+	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$3(Accumulator.scala:168)
+	at scala.Function1.$anonfun$andThen$1(Function1.scala:85)
+	at play.api.libs.streams.StrictAccumulator.run(Accumulator.scala:199)
+	at play.core.server.AkkaHttpServer.$anonfun$runAction$4(AkkaHttpServer.scala:415)
+	at akka.http.scaladsl.util.FastFuture$.strictTransform$1(FastFuture.scala:41)
+	at akka.http.scaladsl.util.FastFuture$.$anonfun$transformWith$3(FastFuture.scala:51)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:447)
+	... 12 common frames omitted
+2021-03-02 14:55:52,189 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-3 - Shutting down connection pool.
+2021-03-02 14:55:52,493 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-25 - Database [default] initialized
+2021-03-02 14:55:52,493 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-25 - Creating Pool for datasource 'default'
+2021-03-02 14:55:52,495 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-25 - datasource [default] bound to JNDI as DefaultDS
+2021-03-02 14:55:52,505 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-6 - Slf4jLogger started
+2021-03-02 14:55:52,948 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-25 - Application started (Dev) (no global state)
+2021-03-02 14:56:22,957 [ERROR] from play.api.http.DefaultHttpErrorHandler in application-akka.actor.default-dispatcher-6 - 
+
+! @7j0onffci - Internal server error, for (GET) [/] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[MongoTimeoutException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN, servers=[{address=mongodb+srv://tweetyuser:asd123ewq@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongodb+srv://tweetyuser:asd123ewq@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority}, caused by {java.net.UnknownHostException: mongodb+srv://tweetyuser:asd123ewq@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority}}]]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:335)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:253)
+	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:424)
+	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:420)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:453)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:94)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:47)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:47)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+Caused by: com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN, servers=[{address=mongodb+srv://tweetyuser:asd123ewq@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongodb+srv://tweetyuser:asd123ewq@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority}, caused by {java.net.UnknownHostException: mongodb+srv://tweetyuser:asd123ewq@cluster0.ogpl4.mongodb.net/tweety?retrywrites=true&w=majority}}]
+	at com.mongodb.internal.connection.BaseCluster.getDescription(BaseCluster.java:182)
+	at com.mongodb.internal.connection.AbstractMultiServerCluster.getDescription(AbstractMultiServerCluster.java:54)
+	at com.mongodb.client.internal.MongoClientDelegate.getConnectedClusterDescription(MongoClientDelegate.java:152)
+	at com.mongodb.client.internal.MongoClientDelegate.createClientSession(MongoClientDelegate.java:103)
+	at com.mongodb.client.internal.MongoClientDelegate$DelegateOperationExecutor.getClientSession(MongoClientDelegate.java:284)
+	at com.mongodb.client.internal.MongoClientDelegate$DelegateOperationExecutor.execute(MongoClientDelegate.java:188)
+	at com.mongodb.client.internal.MongoClientDelegate$DelegateOperationExecutor.execute(MongoClientDelegate.java:177)
+	at com.mongodb.DBCursor.initializeCursor(DBCursor.java:989)
+	at com.mongodb.DBCursor.hasNext(DBCursor.java:172)
+	at dev.morphia.query.internal.MorphiaCursor.toList(MorphiaCursor.java:56)
+	at repositories.TweetRepository.getDatabase(TweetRepository.java:27)
+	at controllers.HomeController.index(HomeController.java:22)
+	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$2(Routes.scala:92)
+	at play.core.routing.HandlerInvokerFactory$$anon$6.resultCall(HandlerInvoker.scala:140)
+	at play.core.routing.HandlerInvokerFactory$$anon$6.resultCall(HandlerInvoker.scala:139)
+	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$3$$anon$4$$anon$5.invocation(HandlerInvoker.scala:113)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:119)
+	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:33)
+	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:175)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:661)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:430)
+	at play.core.j.HttpExecutionContext.$anonfun$execute$1(HttpExecutionContext.scala:64)
+	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:59)
+	at scala.concurrent.impl.Promise$Transformation.submitWithValue(Promise.scala:392)
+	at scala.concurrent.impl.Promise$DefaultPromise.submitWithValue(Promise.scala:302)
+	at scala.concurrent.impl.Promise$DefaultPromise.dispatchOrAddCallbacks(Promise.scala:276)
+	at scala.concurrent.impl.Promise$DefaultPromise.map(Promise.scala:146)
+	at scala.concurrent.Future$.apply(Future.scala:661)
+	at play.core.j.JavaAction.apply(JavaAction.scala:176)
+	at play.api.mvc.Action.$anonfun$apply$4(Action.scala:82)
+	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$4(Accumulator.scala:168)
+	at scala.util.Try$.apply(Try.scala:210)
+	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$3(Accumulator.scala:168)
+	at scala.Function1.$anonfun$andThen$1(Function1.scala:85)
+	at play.api.libs.streams.StrictAccumulator.run(Accumulator.scala:199)
+	at play.core.server.AkkaHttpServer.$anonfun$runAction$4(AkkaHttpServer.scala:415)
+	at akka.http.scaladsl.util.FastFuture$.strictTransform$1(FastFuture.scala:41)
+	at akka.http.scaladsl.util.FastFuture$.$anonfun$transformWith$3(FastFuture.scala:51)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:447)
+	... 12 common frames omitted

@@ -24,7 +24,6 @@ public class TweetRepository {
     }
 
     public List<PostData> getDatabase() {
-
         var d = morphia.datastore().createQuery(PostData.class).search("amr").find().toList();
         return d;
     }
