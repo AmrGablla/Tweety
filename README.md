@@ -1,11 +1,20 @@
-# Tweety
-Rology hiring task to get and add simple tweets data.
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
 
-# Framework
-The project is based on play framework https://www.playframework.com/
+## General info
+This project is hiring task from rology company it is just simple tweets add and view.
+	
+## Technologies
+Project is created with:
+* Play framework
+* SBT building tool
+* Play morphia mongoDB driver
+	
+## Setup
+To run this project, install it locally using sbt:
 
-# pre 
-
-# Run the code
-to run the code just use:  
+```
 $ sbt run
+```
